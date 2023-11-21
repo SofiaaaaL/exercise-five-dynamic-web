@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-//Initializee firestore database
+//Initialize firestore database
 const firestore = require("firebase/firestore");
 //create a reference to the database
 const db = firestore.getFirestore();

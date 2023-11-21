@@ -21,12 +21,18 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const indexRoute = require('./routes/index');
-// const singlePostRoute = require('./routes/singlePost');
-// const createPostRoute = require('./routes/createPost');
+
+//5.define the home page route
+const singlePostRoute = require('./routes/singlePost');
+const createPostRoute = require('./routes/createPost');
 
 
-app.use("/", indexRoute)
+app.use("/", indexRoute);
+//6. add the singlePost route as a app.use in index.js
+app.use("/singlepost", singlePostRoute);
+app.use("/createpost", createPostRoute);
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-})
+});
