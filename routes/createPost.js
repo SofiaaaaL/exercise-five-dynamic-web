@@ -1,4 +1,3 @@
-//create a post
 const express =require("express");
 const router = express.Router();
 const firestore = require("firebase/firestore");
@@ -21,21 +20,18 @@ const submitForm = `
         <button type="submit">Submit</button>
     
     </form>
-`; //take this data and send it to 
+`; 
 
-//if they go to create they get the form
 router.get("/", (req, res) => {
     res.send(submitForm);
 });
 
-
-//if they submit they go to this, and this is where
 router.get("/submit", (req, res) => {
     const queryParams = req.query;
     const title = queryParams.postTitle;
     const text = queryParams.postText;
     const author = queryParams.author;
-    const id = title.replace(/\s+/g, "-").toLowerCase(); //regular expressions code; replace space with a dashline and 
+    const id = title.replace(/\s+/g, "-").toLowerCase();
 
     console.log(title,text )
  
